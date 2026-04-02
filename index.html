@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Name Input</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #page2 {
+            display: none;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1 -->
+    <div id="page1">
+        <h2>Enter Your Name</h2>
+        <input type="text" id="username" placeholder="Enter your name" required>
+        <br><br>
+        <button onclick="goNext()">Next</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2">
+        <h2>Welcome!</h2>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function goNext() {
+            let name = document.getElementById("username").value;
+
+            if (name === "") {
+                alert("Please enter your name");
+                return;
+            }
+
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("page2").style.display = "block";
+
+            // You can customize this message
+            document.getElementById("message").innerText =
+                "Hello " + name + " tu madarchod hai,bsdk aur gandu bhi hai ,bkl chinar.";
+        }
+    </script>
+
+</body>
+</html>
